@@ -6,7 +6,6 @@ from typing import (
     Callable,
     Dict,
     Optional,
-    ParamSpec,
     Type,
     TypeVar,
     Union,
@@ -15,6 +14,12 @@ from typing import (
 import anyio
 from typer import Option as Option, Typer
 from typer.main import Default, TyperCommand
+import sys
+
+if sys.version_info < (3, 10):
+    from typing_extensions import ParamSpec
+else:
+    from typing import ParamSpec
 
 T = TypeVar("T")
 P = ParamSpec("P")

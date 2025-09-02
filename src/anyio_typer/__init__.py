@@ -21,7 +21,7 @@ P = ParamSpec("P")
 
 __author__ = "Vizonex"
 __license__ = "MIT"
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 
 
 # majority of functions were ripped from typer for hacking asyncrhonous code in to inject
@@ -99,9 +99,11 @@ class AnyioTyper(Typer):
         deprecated: bool = False,
         rich_help_panel: Union[str, None] = Default(None),
     ) -> Callable[[Callable[P, Awaitable[T]]], Callable[P, Awaitable[T]]]:
-        """Helps to configure either uvloop or winloop,
-        winloop is currently not supported by anyio without passing something hacky
-        so this function was made to enable this feature."""
+        """Helps to configure either uvloop or winloop."""
+
+        # XXX: winloop is currently not supported by anyio without 
+        # passing something hacky tricks so this function was made 
+        # to enable this feature
         if sys.platform == "win32":
             import winloop as uvloop
         else:

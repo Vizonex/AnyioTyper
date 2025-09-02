@@ -12,11 +12,6 @@ dependencies = [
     "anyio>=4.10.0"
 ]
 
-[build-system]
-requires = ["uv_build>=0.8.4,<0.9.0"]
-build-backend = "uv_build"
-
-
 [project.optional-dependencies]
 trio = ["trio>=0.30.0"]
 uvloop = [

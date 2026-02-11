@@ -1,5 +1,6 @@
 ---
 # workflow is borrowed from frozenlist: https://github.com/aio-libs/frozenlist/blob/master/.github/workflows/dependabot-auto-merge.yml
+# I'm lazy and don't like having to waiting on dependabot if somehting succeeds
 name: Dependabot auto-merge
 on: pull_request_target
 
